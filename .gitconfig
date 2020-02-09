@@ -1,0 +1,53 @@
+[user]
+    name = Will Price
+    email = will.price94@gmail.com
+[alias]
+    a = add
+    ai = add -i
+    c = commit
+    ca = commit --amend
+    co = checkout
+    d = diff
+    dc = diff --cached
+    l = log --oneline --graph --decorate
+    la = log --oneline --graph --decorate --all
+    rd = reset --hard
+    ri = reset --mixed
+    s = status
+    sv = stash
+    p = push
+    ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+[color]
+    ui = auto
+[color "diff"]
+    old = red
+    new = green
+    meta = cyan
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+    prompt = false
+[push]
+    default = simple
+[commit]
+    gpgsign = false
+[gpg]
+    program = gpg2
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+[mergetool "nbdime"]
+    cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+    prompt = false
+[merge "jupyternotebook"]
+    driver = git-nbmergedriver merge %O %A %B %L %P
+    name = jupyter notebook merge driver
+[pull]
+    rebase = true
+[help]
+	autocorrect = 20
+[credential]
+	helper = cache

@@ -1,0 +1,5 @@
+dcraw
+data/raw
+data/interim
+data/processed
+.idea
